@@ -36,3 +36,32 @@ function areYouPlayingBanjo(name) {
 }
 
 //------------------------------------------------------------->
+
+/* 4. Your job is to add a method 'sum' to all array objects, which sums all the numbers in it. You should return 0 if the array is empty.
+
+For example:
+
+var arr = [1,2,3,4];
+arr.sum();  //returns 10
+
+var arr = [10, 28, 14, 33];
+arr.sum(); //returns 85
+*/
+
+Array.prototype.sum = function() {
+  let result = 0;
+  if(this.length == 0){
+    return 0;
+  }
+  else {
+  for (let i = 0; i < this.length; i++){
+    result += this[i];
+  }
+    }
+  return result;
+}
+
+var arr = [1,2,3,4];
+console.log(arr.sum()); 
+
+//--------------------------------------------------------->

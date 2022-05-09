@@ -26,13 +26,11 @@ name + " does not play banjo" */
 
 function areYouPlayingBanjo(name) {
   // Implement me
-  if(name[0] === "R" || name[0] === "r"){
-    return name + " plays banjo" ;
-  }
-  else {
+  if (name[0] === "R" || name[0] === "r") {
+    return name + " plays banjo";
+  } else {
     return name + " does not play banjo";
   }
- 
 }
 
 //------------------------------------------------------------->
@@ -48,20 +46,32 @@ var arr = [10, 28, 14, 33];
 arr.sum(); //returns 85
 */
 
-Array.prototype.sum = function() {
+Array.prototype.sum = function () {
   let result = 0;
-  if(this.length == 0){
+  if (this.length == 0) {
     return 0;
-  }
-  else {
-  for (let i = 0; i < this.length; i++){
-    result += this[i];
-  }
+  } else {
+    for (let i = 0; i < this.length; i++) {
+      result += this[i];
     }
+  }
   return result;
-}
+};
 
-var arr = [1,2,3,4];
-console.log(arr.sum()); 
+var arr = [1, 2, 3, 4];
+console.log(arr.sum());
 
 //--------------------------------------------------------->
+
+/*  5. Convert number to reversed array of digits
+Given a random non-negative number, you have to return the digits of this number within an array in reverse order. */
+
+function digitize(n) {
+  const arr = String(n).split('').reverse().map((num) => Number(num));
+  return arr;
+  
+}
+
+console.log(digitize(35231));
+
+//----------------------------------------------------------->

@@ -96,3 +96,41 @@ function getGrade (s1, s2, s3) {
     else if (averageScore < 90) return "B";
     else return "A";
 }
+
+// ----------------------------------------------------------------------->
+
+/* 7. A hero is on his way to the castle to complete his mission. However, he's been
+ told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets
+  to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific
+   given number of bullets and move forward to fight another specific given number of dragons, will he survive?
+Return True if yes, False otherwise */
+
+function hero(bullets, dragons){
+  return bullets >= dragons * 2
+}
+
+//------------------------------------------------------------------------->
+
+/* 8. Consider an array/list of sheep where some sheep may be missing from their place. We need a function 
+that counts the number of sheep present in the array (true means present). */
+
+const array1 = [true,  true,  true,  false,
+  true,  true,  true,  true ,
+  true,  false, true,  false,
+  true,  false, false, true ,
+  true,  true,  false,  true ,
+  false, false, true,  true ];
+
+function countSheeps(arrayOfSheep) {
+  let result = 0;
+  arrayOfSheep.forEach((elem) => {
+    if (elem == true){
+      result += 1;
+    }
+  })
+  return result;
+}
+
+console.log(countSheeps(array1));
+
+//------------------------------------------------------------------------------>

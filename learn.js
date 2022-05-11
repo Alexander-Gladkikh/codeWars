@@ -67,9 +67,11 @@ console.log(arr.sum());
 Given a random non-negative number, you have to return the digits of this number within an array in reverse order. */
 
 function digitize(n) {
-  const arr = String(n).split('').reverse().map((num) => Number(num));
+  const arr = String(n)
+    .split("")
+    .reverse()
+    .map((num) => Number(num));
   return arr;
-  
 }
 
 console.log(digitize(35231));
@@ -87,14 +89,13 @@ Numerical Score	Letter Grade
 0 <= score < 60	'F'
 Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100. */
 
-
-function getGrade (s1, s2, s3) {
-  averageScore = (s1+s2+s3)/3;
-  if (averageScore < 60)  return "F";
-    else if (averageScore < 70) return "D";
-    else if (averageScore < 80) return "C";
-    else if (averageScore < 90) return "B";
-    else return "A";
+function getGrade(s1, s2, s3) {
+  averageScore = (s1 + s2 + s3) / 3;
+  if (averageScore < 60) return "F";
+  else if (averageScore < 70) return "D";
+  else if (averageScore < 80) return "C";
+  else if (averageScore < 90) return "B";
+  else return "A";
 }
 
 // ----------------------------------------------------------------------->
@@ -105,8 +106,8 @@ function getGrade (s1, s2, s3) {
    given number of bullets and move forward to fight another specific given number of dragons, will he survive?
 Return True if yes, False otherwise */
 
-function hero(bullets, dragons){
-  return bullets >= dragons * 2
+function hero(bullets, dragons) {
+  return bullets >= dragons * 2;
 }
 
 //------------------------------------------------------------------------->
@@ -114,20 +115,40 @@ function hero(bullets, dragons){
 /* 8. Consider an array/list of sheep where some sheep may be missing from their place. We need a function 
 that counts the number of sheep present in the array (true means present). */
 
-const array1 = [true,  true,  true,  false,
-  true,  true,  true,  true ,
-  true,  false, true,  false,
-  true,  false, false, true ,
-  true,  true,  false,  true ,
-  false, false, true,  true ];
+const array1 = [
+  true,
+  true,
+  true,
+  false,
+  true,
+  true,
+  true,
+  true,
+  true,
+  false,
+  true,
+  false,
+  true,
+  false,
+  false,
+  true,
+  true,
+  true,
+  false,
+  true,
+  false,
+  false,
+  true,
+  true,
+];
 
 function countSheeps(arrayOfSheep) {
   let result = 0;
   arrayOfSheep.forEach((elem) => {
-    if (elem == true){
+    if (elem == true) {
       result += 1;
     }
-  })
+  });
   return result;
 }
 
@@ -139,8 +160,42 @@ console.log(countSheeps(array1));
 
 For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1. */
 
-function squareDigits(num){
-  return Number(String(num).split('').map((elem) => Number(elem)**2).join(""));
+function squareDigits(num) {
+  return Number(
+    String(num)
+      .split("")
+      .map((elem) => Number(elem) ** 2)
+      .join("")
+  );
 }
 
 console.log(squareDigits(3212));
+
+//--------------------------------------------------------------------->
+
+/* 10. Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.
+
+If you want to know more: http://en.wikipedia.org/wiki/DNA
+
+In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". You function receives one side of the DNA (string, except for Haskell); you need to return the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+
+More similar exercise are found here: http://rosalind.info/problems/list-view/ (source)
+
+Example: (input --> output)
+
+"ATTGC" --> "TAACG"
+"GTAT" --> "CATA"  */
+
+function DNAStrand(dna){
+  const code = {
+    'A': 'T',
+    'T': 'A',
+    'C': 'G',
+    'G': 'C'
+  }
+  return dna.split('').map((elem) => code[elem] ).join('')
+}
+
+console.log(DNAStrand("AAAAA"));
+
+//------------------------------------------------------------------>
